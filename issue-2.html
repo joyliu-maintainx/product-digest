@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MaintainX Product Digest — Issue #2</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F2F4F7; color: #0D1F3C; line-height: 1.5; }
+.header { background: #2563EB; padding: 32px 40px 28px; }
+.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-text { font-size: 14px; font-weight: 700; color: #fff; letter-spacing: 0.03em; }
+.logo-text span { color: rgba(255,255,255,0.7); }
+.issue-tag { font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 12px; }
+.header h1 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.header-meta { font-size: 13px; color: rgba(255,255,255,0.7); }
+.header-meta strong { color: #fff; }
+.header-note { display: inline-block; margin-top: 10px; background: rgba(255,255,255,0.15); color: #fff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); }
+.tldr { background: #0a1628; padding: 28px 40px; border-bottom: 1px solid #1e2d42; }
+.tldr-label { font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #94a3b8; margin-bottom: 20px; }
+.tldr-list { display: flex; flex-direction: column; gap: 10px; }
+.tldr-item { display: flex; align-items: baseline; gap: 10px; }
+.tldr-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; width: fit-content; }
+.tag-problem { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.25); }
+.tag-pattern { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+.tag-shift { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+.tldr-item p { font-size: 13px; color: #94a3b8; line-height: 1.6; }
+.tldr-item strong { color: #e2e8f0; }
+.content { padding: 28px 40px 48px; }
+.section-header { display: flex; align-items: stretch; gap: 0; margin: 32px 0 16px; border-radius: 6px; overflow: hidden; }
+.section-header-bar { width: 5px; background: #2563EB; flex-shrink: 0; }
+.section-header-inner { background: #0D1F3C; flex: 1; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
+.section-title { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+.section-count { font-size: 11px; color: #5a7499; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+.card { background: #fff; border-radius: 10px; border: 1px solid #DDE3EC; border-top: 6px solid #2563EB; overflow: hidden; display: flex; flex-direction: column; height: 100%; transition: box-shadow 0.15s, transform 0.15s; }
+.card:hover { box-shadow: 0 6px 20px rgba(37,99,235,0.12); transform: translateY(-2px); }
+.card.featured { border-top: 6px solid #F5A623; }
+.featured-banner { background: linear-gradient(90deg, #F5A623, #F97316); padding: 5px 16px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
+.card-date-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 0; }
+.card-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.product-name { font-size: 12px; font-weight: 700; color: #64748b; }
+.badge { font-size: 9px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; }
+.badge-ai { background: #DBEAFE; color: #1D4ED8; }
+.badge-cmms { background: #FFEDD5; color: #C2410C; }
+.badge-start { background: #DCFCE7; color: #15803D; }
+.card-date { font-size: 11px; color: #94A3B8; white-space: nowrap; }
+.card-body { padding: 8px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+.card-title { font-size: 15px; font-weight: 700; color: #0D1F3C; margin-bottom: 12px; line-height: 1.35; }
+.detail { margin-bottom: 8px; }
+.detail-label { font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #94A3B8; margin-bottom: 2px; }
+.detail-text { font-size: 13px; color: #334155; line-height: 1.5; }
+.mx-box { background: #eff6ff; border-left: 3px solid #2563EB; border-radius: 0 5px 5px 0; padding: 8px 10px; margin-top: 10px; }
+.mx-box .detail-label { color: #1d4ed8; }
+.mx-box .detail-text { font-size: 12px; color: #1e40af; }
+.card-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 12px; font-weight: 600; color: #2563EB; text-decoration: none; border: 1px solid #BFDBFE; border-radius: 5px; padding: 5px 10px; width: fit-content; }
+.card-link:hover { background: #EFF6FF; }
+.footer { background: #0D1F3C; padding: 20px 40px; text-align: center; }
+.footer p { font-size: 11px; color: #4A6080; }
+.footer strong { color: #7A8EAD; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-top"><div class="logo"><div class="logo-text">Maintain<span>X</span> · Product Digest</div></div><div class="issue-tag">Issue #2</div></div>
+  <h1>What Shipped This Week</h1>
+  <div class="header-meta"><strong>Feb 22 – Mar 7, 2026</strong> &nbsp;·&nbsp; 9 updates · ~5 min read</div>
+  <div class="header-note">⭐ Big week — autonomous agents went from demo to product</div>
+</div>
+<div class="tldr">
+  <div class="tldr-label">TLDR — Trends &amp; Patterns</div>
+  <div class="tldr-list">
+    <div class="tldr-item"><span class="tldr-tag tag-shift">Category Shift</span><p><strong>Notion and Cursor both shipped always-on, event-triggered agents</strong> — the question is no longer whether to build them, but which maintenance workflows run autonomously first.</p></div>
+    <div class="tldr-item"><span class="tldr-tag tag-pattern">UX Pattern</span><p><strong>Linear's deeplink opens AI pre-filled with full context in one click</strong> — tapping a MaintainX WO should load asset history + SOP the same way.</p></div>
+    <div class="tldr-item"><span class="tldr-tag tag-problem">User Problem</span><p><strong>Technicians close WOs without filling critical fields</strong> — UpKeep's Required Fields blocks closure until they do.</p></div>
+  </div>
+</div>
+<div class="content">
+  <div class="section-header"><div class="section-header-bar"></div><div class="section-header-inner"><span class="section-title">✦ Leading AI Products</span><span class="section-count">Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n</span></div></div>
+  <div class="card-grid">
+    <div class="card featured"><div class="featured-banner">⭐ Feature of the Week</div><div class="card-date-row"><div class="card-tags"><span class="product-name">Notion</span><span class="badge badge-ai">AI Product</span></div><span class="card-date">Mar 2026</span></div><div class="card-body"><div class="card-title">Custom Agents — Always-on, event-triggered automation</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Repetitive knowledge tasks are too nuanced for rule-based automation but too tedious to handle manually every day.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">Assign a job + trigger and the agent runs 24/7 — across Notion, Slack, Mail, Calendar, Figma, Linear, and custom MCP servers.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">The proof point for autonomous maintenance: agents that auto-create PMs from sensor alerts or escalate overdue WOs — no human trigger needed.</div></div><a class="card-link" href="https://www.notion.so/product" target="_blank">Release notes ↗</a></div></div>
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Cursor</span><span class="badge badge-ai">AI Product</span></div><span class="card-date">Feb 2026</span></div><div class="card-body"><div class="card-title">Automations — Event-triggered agents with full codebase context</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Every AI task still needs a human to start it — no way to wire agents to live events.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">Agents that fire on Slack messages, Linear issues, GitHub pushes, or PagerDuty alerts — each producing merge-ready PRs with full codebase context.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">The event → agent → artifact model maps directly to sensor alert → work order → PM scheduling. Best reference for this pattern.</div></div><a class="card-link" href="https://www.cursor.com/changelog" target="_blank">Release notes ↗</a></div></div>
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Linear</span><span class="badge badge-ai">AI Product</span></div><span class="card-date">Feb 2026</span></div><div class="card-body"><div class="card-title">Deeplink to AI — One click to AI pre-loaded with full context</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Every AI task starts with manual copy-paste — context degrades in the transfer every time.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">One click opens Cursor or Claude pre-filled with full issue context — description, comments, attachments, all of it.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">Tapping a work order should open MaintainX AI pre-loaded with asset history, last failure, and the SOP — zero copy-paste.</div></div><a class="card-link" href="https://linear.app/changelog" target="_blank">Release notes ↗</a></div></div>
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Glean</span><span class="badge badge-ai">AI Product</span></div><span class="card-date">Feb 2026</span></div><div class="card-body"><div class="card-title">Voice — Hands-free enterprise knowledge queries</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Workers with full hands — or in loud environments — have no good way to query enterprise AI.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">Real-time voice for hands-free knowledge queries — plus slide decks generated from internal data, auto-formatted to brand standards.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">Shop floor technicians can't type mid-task — voice-first WO lookup, completion logging, and parts reporting is an untapped field moment.</div></div><a class="card-link" href="https://www.glean.com/changelog" target="_blank">Release notes ↗</a></div></div>
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Intercom</span><span class="badge badge-ai">AI Product</span></div><span class="card-date">Feb 2026</span></div><div class="card-body"><div class="card-title">Data Connector Health — Live status for every integration</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Integration failures are silent — a connector breaks, data stops flowing, and no one notices until the damage is done.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">Live Health status (Healthy / Degraded / Unhealthy) per connector, plus a "Used by" column showing which workflows depend on it before you touch anything.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">As integrations grow (ERP, IoT, EAM), connector health belongs in the admin UI — not discovered via a support ticket.</div></div><a class="card-link" href="https://www.intercom.com/changes" target="_blank">Release notes ↗</a></div></div>
+  </div>
+  <div class="section-header"><div class="section-header-bar"></div><div class="section-header-inner"><span class="section-title">🚀 Interesting AI Startups</span><span class="section-count">Runway · Simplora · Claude Sonnet 4.6</span></div></div>
+  <div class="card-grid">
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Runway</span><span class="badge badge-start">Startup</span></div><span class="card-date">Feb · $315M</span></div><div class="card-body"><div class="card-title">World Models — AI that reasons about physical environments</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Industrial inspection still needs human eyes — AI can't yet reason about physical space, object state, or causality from video.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">World models: AI that simulates and reasons about physical environments — not just generates video. $315M at $5.3B valuation.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">Long-term: video-based equipment inspection without human eyes — directionally important for field maintenance AI.</div></div></div></div>
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Simplora</span><span class="badge badge-start">Startup</span></div><span class="card-date">Feb 2026</span></div><div class="card-body"><div class="card-title">Meeting → Work Orders — Action items auto-routed from calls</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Decisions from planning meetings rarely make it into the work order system — the handoff is manual and lossy.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">Meeting action items extracted and routed directly into Jira, Slack, or Linear — no copy-paste, no follow-up needed.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">Auto-capturing "replace HVAC filter on Line 3" from a planning call into a MaintainX WO closes a loop customers currently do manually — high-value, low-visibility gap.</div></div></div></div>
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Claude · Anthropic</span><span class="badge badge-start">Model</span></div><span class="card-date">Feb 17</span></div><div class="card-body"><div class="card-title">Claude Sonnet 4.6 — #1 writing model within 48 hrs</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Most AI is optimized for code — enterprises need one that nails structured docs: SOPs, incident reports, compliance records.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">#1 in blind writing tests within 48 hours of launch — beats its predecessor in 70% of structured doc comparisons.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">Best model today for turning technician voice notes or photos into maintenance SOPs, WO descriptions, and incident reports.</div></div><a class="card-link" href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank">Release notes ↗</a></div></div>
+  </div>
+  <div class="section-header"><div class="section-header-bar"></div><div class="section-header-inner"><span class="section-title">🔧 CMMS + EAM + Field Service</span><span class="section-count">UpKeep · Fiix · 2 updates</span></div></div>
+  <div class="card-grid">
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">UpKeep</span><span class="badge badge-cmms">CMMS</span></div><span class="card-date">Feb 2026</span></div><div class="card-body"><div class="card-title">Required Fields + Locked Tasks — Enforce data quality at close</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Technicians close WOs without filling critical fields — leaving records managers can't trust for compliance or reporting.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">Required Fields blocks WO closure until filled. Locked Tasks restricts sign-off to the assigned user. SOPs linkable via URL.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">A persistent pain in regulated industries — compare MaintainX's enforcement features on configurability and how easy they are to surface.</div></div><a class="card-link" href="https://www.upkeep.com/changelog" target="_blank">Release notes ↗</a></div></div>
+    <div class="card"><div class="card-date-row"><div class="card-tags"><span class="product-name">Fiix</span><span class="badge badge-cmms">CMMS</span></div><span class="card-date">Feb 2026</span></div><div class="card-body"><div class="card-title">Copilot Expansion — Plain-English queries over assets and sensors</div><div class="detail"><div class="detail-label">Problem</div><div class="detail-text">Maintenance insights are locked behind complex filters — "what's the uptime for Line 3 this month?" requires a data analyst.</div></div><div class="detail"><div class="detail-label">Solution</div><div class="detail-text">Plain-English queries over assets and sensors in real time — now with hourly sensor queries by name and structured multi-record output.</div></div><div class="mx-box"><div class="detail-label">💡 MaintainX</div><div class="detail-text">The most accessible AI feature for non-technical managers — Fiix's rapid expansion signals where demand is pulling the whole category.</div></div><a class="card-link" href="https://www.fiixsoftware.com/changelog" target="_blank">Release notes ↗</a></div></div>
+  </div>
+</div>
+<div class="footer">
+  <p><strong>MaintainX Product Digest</strong> · Issue #2 · Feb 22 – Mar 7, 2026</p>
+  <p style="margin-top:5px;">Leading AI: Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n &nbsp;·&nbsp; CMMS/EAM: UpKeep · Limble · Fiix · ServiceMax · SAP</p>
+</div>
+</body>
+</html>
