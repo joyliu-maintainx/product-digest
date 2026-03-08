@@ -31,19 +31,21 @@ Search for recent product updates, changelog entries, release notes, and funding
 ### Source priority
 1. Official release notes / changelog pages (most reliable)
 2. Company blog posts announcing features
-3. Tech press (TechCrunch, The Verge, VentureBeat) for funding news
+3. Tech press (TechCrunch, The Verge, VentureBeat, SAP Insider) for funding news or major launches
 4. LinkedIn / Twitter announcements as secondary confirmation
 
-### What qualifies for inclusion
+### What qualifies for a dedicated card
 - New features that have **shipped** (not announced, not "coming soon")
 - Funding rounds ≥ $50M if strategically relevant to MaintainX's space
 - Model releases (foundation models) if they affect tooling or the competitive landscape
 - Partner integrations that meaningfully expand a competitor's reach
 
-### What to skip
-- Bug fixes and minor patches
+### What goes in the "Also Shipped" overflow card
+Every watchlist company that released something during the issue window — even if minor or less directly relevant to MaintainX — gets a bullet in the "Also Shipped" card rather than being silently omitted. See Section 10.
+
+### What to skip entirely
+- Bug fixes and minor patches with no user-facing change
 - UI refreshes with no functional change
-- News without a clear "so what for MaintainX" angle
 
 ---
 
@@ -54,23 +56,20 @@ Broad AI productivity and developer tools that influence UX expectations and AI 
 
 **Core watchlist:**
 - Notion (AI, agents, databases)
-- Linear (project management AI)
 - Cursor (AI coding)
 - ChatGPT / OpenAI
 - Claude / Anthropic
+- Linear (project management AI)
 - Glean (enterprise AI search)
 - Intercom (AI support)
 - n8n (workflow automation)
-- Figma (design + AI)
-- Airtable
-- Slack / Teams (AI features)
 
 ### Section 2 — Interesting AI Startups
 Emerging tools and model releases that represent directional signals for where the industry is heading.
 
 **Core watchlist:**
 - High-growth AI startups with relevant functionality (agents, voice, vision, document AI)
-- New foundation model releases (GPT-5, Gemini, Claude, etc.)
+- New foundation model releases (GPT-5.x, Gemini, Claude, etc.)
 - Funding rounds that signal where capital is flowing in AI infrastructure
 
 **Selection criteria:** Relevance > fame. A niche startup solving a maintenance-adjacent problem beats a big launch with no MaintainX angle.
@@ -93,25 +92,27 @@ Direct competitors and adjacent platforms in the maintenance and field operation
 
 ## 4. Card Count & Layout
 
-- **Total cards per issue:** 8–12
-- **Section 1 (AI Products):** 4–6 cards
+- **Total cards per issue:** 8–12 dedicated cards, plus one "Also Shipped" overflow card per section if needed
+- **Section 1 (AI Products):** 4–6 dedicated cards
 - **Section 2 (Startups):** 2–4 cards
 - **Section 3 (CMMS):** 2–3 cards
 - **Layout:** 3-column CSS Grid (`repeat(3, 1fr)`)
 - **Featured card:** Optional. One card per issue may be designated "Feature of the Week" if there's a standout release with exceptionally high MaintainX relevance. Use sparingly — max 1 per issue.
+- **Same company, multiple cards:** Allowed when a company shipped multiple distinct features worth separate callouts.
 
 ---
 
 ## 5. Writing Standards
 
 ### Card title
-Format: `Feature Name — Short descriptor`
-- Feature name is what the product team calls it, verbatim where possible
-- Descriptor is a punchy phrase, not a full sentence
-- Examples:
-  - `Custom Agents — Set a job, set a trigger, let it run 24/7`
-  - `Required Fields + Locked Tasks — Work orders can't close until the job is done right`
-  - `Deeplink to AI Tools — Full issue context, one click`
+Write a clean, descriptive name that immediately conveys the solution and use case. No em-dash or "—" separator required.
+
+- Use the product team's name for the feature where possible
+- If the official name is vague, make the title self-explanatory
+- Good: `MCP Server for Product Management`
+- Good: `Required Fields + Locked Tasks`
+- Good: `Deeplink to AI Tools`
+- Avoid: `Feature Name — Short descriptor` (the dash format is no longer preferred)
 
 ### Problem field
 - **One sentence only**
@@ -146,19 +147,35 @@ Rules:
 **Good:** `Tapping a work order should open MaintainX AI pre-loaded with asset history, last failure, and the SOP — zero copy-paste.`
 **Bad:** `This is a pattern MaintainX could consider for its AI features.`
 
-### Card link text
+### Card link
+**Required on every dedicated card.** No exceptions — every card must have a source link. Prefer release notes over press. Never omit the link even if it points to a general changelog or product page.
+
 Use the most specific label available:
 - `Release notes ↗` — preferred for product releases
 - `Changelog ↗` — for changelog pages
 - `Product page ↗` — when no specific release link exists
-- `TechCrunch ↗` / `Blog post ↗` — for press / announcements
+- `TechCrunch ↗` / `SAP Insider ↗` / `Blog post ↗` — for press / announcements
 - Always include `target="_blank"`
 
-### Dates
-- Use `Mon DD` format (e.g., `Feb 24`, `Mar 5`)
-- If only the month is known, use `Mon YYYY` (e.g., `Feb 2026`)
-- For funding news, append the amount: `Feb 10 · $315M`
-- For versioned releases, append the version: `Feb 23 · v5.17`
+The "Also Shipped" overflow card uses inline text links (not `.card-link` buttons) — see Section 10.
+
+### Dates on cards
+- `Mon DD` — standard (e.g., `Feb 24`, `Mar 5`)
+- `Mon YYYY` — when only the month is known (e.g., `Feb 2026`)
+- `Mon DD – DD, YYYY` — when both dates are in the same month (e.g., `Feb 10 – 21, 2026` — note: drop the month on the second date)
+- `Mon DD · $NNM` — for funding news (e.g., `Feb 10 · $315M`)
+- `Mon DD · vX.XX` — for versioned releases (e.g., `Feb 23 · v5.17`)
+- Seasonal labels are allowed when no exact date is known: `Winter 2026`, `Jan 2026 Drop`, `2026 Roadmap`
+
+### Badge variants
+```html
+<span class="badge badge-ai">AI Product</span>      <!-- Section 1: AI products -->
+<span class="badge badge-start">Startup</span>       <!-- Section 2: startups -->
+<span class="badge badge-start">Model Launch</span>  <!-- Section 2: foundation model releases -->
+<span class="badge badge-start">Platform</span>      <!-- Section 2: frontier/infrastructure platforms not yet fully productized -->
+<span class="badge badge-cmms">CMMS</span>           <!-- Section 3: CMMS competitors -->
+<span class="badge badge-cmms">EAM</span>            <!-- Section 3: EAM platforms (SAP, IBM Maximo) -->
+```
 
 ---
 
@@ -178,7 +195,8 @@ The TLDR appears immediately below the header, before the cards. It synthesizes 
 | Category Shift | `tag-shift` | Red | The industry is moving in a new direction |
 | UX Pattern | `tag-pattern` | Purple | A specific interaction model is emerging across products |
 | User Problem | `tag-problem` | Green | A clear pain point is being validated across products |
-| Competitive Signal | `tag-compete` | Amber | A direct competitor made a notable strategic move |
+
+There are only three valid tag types. Do not create new tag classes.
 
 ### Writing the TLDR
 - Write TLDR **last**, after all cards are written
@@ -195,9 +213,9 @@ The TLDR appears immediately below the header, before the cards. It synthesizes 
 
 ### Issue number and date range
 - Issue number: sequential (`Issue #1`, `Issue #2`, etc.)
-- Date range: `Mon DD – Mon DD, YYYY` (e.g., `Feb 22 – Mar 7, 2026`)
-- Read time: approximate based on card count (`~5 min read` for 8–10 cards)
-- Update count: accurate count in header-meta
+- Date range in header-meta: `Mon DD – Mon DD, YYYY` when months differ (e.g., `Feb 22 – Mar 7, 2026`); `Mon DD – DD, YYYY` when same month (e.g., `Feb 10 – 21, 2026`)
+- Read time: approximate based on card count (`~5 min read` for 8–10 cards, `~6 min read` for 11–13)
+- Update count: accurate count of all updates covered (dedicated cards + overflow bullets)
 
 ### header-note (optional)
 A brief callout pill shown in the header when the week had an especially notable through-line. Use when there's a clear theme worth surfacing before the TLDR.
@@ -206,6 +224,11 @@ A brief callout pill shown in the header when the week had an especially notable
 - Keep under 10 words
 - Example: `⭐ Big week — autonomous agents went from demo to product`
 - **Omit if there's no strong theme** — don't force it
+
+### Logo text
+Logo text is: `MaintainX · Industry Watch` rendered as `Maintain<span>X</span> · Industry Watch`.
+
+Do **not** include a logo-mark square element. The logo is text-only.
 
 ---
 
@@ -219,8 +242,14 @@ Three fixed sections, always in this order:
 | 2 | Interesting AI Startups | 🚀 | `badge-start` (green) |
 | 3 | CMMS + EAM + Field Service | 🔧 | `badge-cmms` (orange) |
 
-### Section header company list
-The `.section-count` element lists the companies covered in that section, separated by ` · `. Update this to match the actual cards in that section each issue.
+### Section header company list and update count
+The `.section-count` element always lists **all watchlist companies** for that section — even if some had no releases that week — followed by the total update count.
+
+Format: `Company · Company · · · N updates`
+
+Example: `Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n · 8 updates`
+
+The update count includes both dedicated cards and overflow bullets in the "Also Shipped" card.
 
 ---
 
@@ -240,7 +269,61 @@ Use at most once per issue, for the single most important release.
 
 ---
 
-## 10. Brand & Visual Standards
+## 10. "Also Shipped" Overflow Card
+
+One overflow card per section, placed at the end of the section's card grid. It covers all watchlist companies that released something during the issue window but didn't earn a dedicated card.
+
+**When to include:** Any time a watchlist company released something — even minor — but didn't get a dedicated card. Do not silently omit them.
+
+**Format:** One bullet per company:
+- **Company name** (bold, uppercase)
+- One short sentence on the user problem
+- One short sentence on the solution
+- Inline `Release notes ↗` link in plain text
+
+**CSS classes needed** (add to the `<style>` block):
+```css
+.card.also-shipped { border-top-color: #64748b; }
+.also-shipped-banner {
+  background: #f1f5f9;
+  padding: 5px 16px;
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+.also-list { list-style: none; display: flex; flex-direction: column; gap: 14px; padding: 0; }
+.also-item { display: flex; flex-direction: column; gap: 3px; }
+.also-co { font-size: 11px; font-weight: 800; color: #0D1F3C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1px; }
+.also-desc { font-size: 12px; color: #334155; line-height: 1.5; }
+.also-link { font-size: 11px; font-weight: 600; color: #2563EB; text-decoration: none; }
+.also-link:hover { text-decoration: underline; }
+```
+
+**Card HTML template:**
+```html
+<div class="card also-shipped">
+  <div class="also-shipped-banner">Also Shipped</div>
+  <div class="card-date-row">
+    <div class="card-tags">
+      <span class="product-name">[Co · Co · Co]</span>
+    </div>
+    <span class="card-date">[date range]</span>
+  </div>
+  <div class="card-body">
+    <ul class="also-list">
+      <li class="also-item">
+        <span class="also-co">Company Name</span>
+        <span class="also-desc">One sentence on user problem. One sentence on solution. <a class="also-link" href="[URL]" target="_blank">Release notes ↗</a></span>
+      </li>
+      <!-- repeat per company -->
+    </ul>
+  </div>
+</div>
+```
+
+---
+
+## 11. Brand & Visual Standards
 
 ### Colors
 | Use | Hex |
@@ -250,6 +333,8 @@ Use at most once per issue, for the single most important release.
 | Featured orange | `#F5A623` |
 | Background gray | `#F2F4F7` |
 | TLDR background | `#0a1628` |
+| Also Shipped banner background | `#f1f5f9` |
+| Also Shipped border-top | `#64748b` |
 
 ### Typography
 - Font stack: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`
@@ -261,12 +346,12 @@ Use at most once per issue, for the single most important release.
 - TLDR dark background styling
 - MX callout blue box (`.mx-box`) left-border pattern
 - Section header bar + dark inner panel pattern
-- Logo text: `MaintainX · Industry Watch` (with `<span>X</span>` for the gray X)
+- Logo text: `MaintainX · Industry Watch` (text-only, no logo-mark square)
 - H1 text: `What Others Shipped This Week`
 
 ---
 
-## 11. File Naming & Hosting
+## 12. File Naming & Hosting
 
 ### File name format
 `issue-[N]-[startmonDD]-[endmonDD].html`
@@ -288,7 +373,27 @@ Examples:
 
 ---
 
-## 12. Card HTML Template
+## 13. Footer Format
+
+The footer appears at the bottom of every issue. Two lines:
+
+**Line 1:** `MaintainX Industry Watch · Issue #[N] · [Date range]`
+- Date range format: same-month shortening (e.g., `Feb 10–21, 2026` — no spaces around the dash); cross-month uses spaces (e.g., `Feb 22 – Mar 7, 2026`)
+
+**Line 2:** Full watchlist summary, split by category
+- Format: `Leading AI: [list]  ·  CMMS/EAM: [list]`
+- Example: `Leading AI: Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n  ·  CMMS/EAM: UpKeep · Limble · Fiix · ServiceMax · SAP`
+
+```html
+<div class="footer">
+  <p><strong>MaintainX Industry Watch</strong> · Issue #[N] · [Date Range]</p>
+  <p style="margin-top:5px;">Leading AI: [list] &nbsp;·&nbsp; CMMS/EAM: [list]</p>
+</div>
+```
+
+---
+
+## 14. Card HTML Template
 
 ### Standard card
 ```html
@@ -301,7 +406,7 @@ Examples:
     <span class="card-date">[Mon DD]</span>
   </div>
   <div class="card-body">
-    <div class="card-title">[Feature Name] — [Short descriptor]</div>
+    <div class="card-title">[Descriptive Feature Name]</div>
     <div class="detail">
       <div class="detail-label">Problem</div>
       <div class="detail-text">[One punchy sentence leading with specific friction.]</div>
@@ -319,33 +424,17 @@ Examples:
 </div>
 ```
 
-### Featured card (add before `.card-date-row`)
+### Featured card
 ```html
 <div class="card featured">
   <div class="featured-banner">⭐ Feature of the Week</div>
-  <!-- rest of card identical to standard -->
-</div>
-```
-
-### Badge variants
-```html
-<span class="badge badge-ai">AI Product</span>      <!-- Section 1 -->
-<span class="badge badge-start">Startup</span>       <!-- Section 2 -->
-<span class="badge badge-start">Model Launch</span>  <!-- Section 2, model releases -->
-<span class="badge badge-cmms">CMMS</span>           <!-- Section 3 -->
-```
-
-### TLDR item
-```html
-<div class="tldr-item">
-  <span class="tldr-tag tag-shift">Category Shift</span>
-  <p><strong>[Bold claim]</strong> — [Implication for MaintainX].</p>
+  <!-- identical card structure below, starting with .card-date-row -->
 </div>
 ```
 
 ---
 
-## 13. Full Issue Structure (Skeleton)
+## 15. Full Issue Structure (Skeleton)
 
 ```html
 <!-- HEADER -->
@@ -368,7 +457,7 @@ Examples:
 <div class="tldr">
   <div class="tldr-label">TLDR — Trends &amp; Patterns</div>
   <div class="tldr-list">
-    <!-- 3 tldr-item divs -->
+    <!-- 3 tldr-item divs, using tag-shift / tag-pattern / tag-problem only -->
   </div>
 </div>
 
@@ -380,17 +469,20 @@ Examples:
     <div class="section-header-bar"></div>
     <div class="section-header-inner">
       <span class="section-title">✦ Leading AI Products</span>
-      <span class="section-count">[Co · Co · Co]</span>
+      <span class="section-count">Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n · [N] updates</span>
     </div>
   </div>
-  <div class="card-grid"><!-- 4–6 cards --></div>
+  <div class="card-grid">
+    <!-- 4–6 dedicated cards -->
+    <!-- 1 "Also Shipped" card if any watchlist companies had minor releases -->
+  </div>
 
   <!-- SECTION 2 -->
   <div class="section-header">
     <div class="section-header-bar"></div>
     <div class="section-header-inner">
       <span class="section-title">🚀 Interesting AI Startups</span>
-      <span class="section-count">[Co · Co]</span>
+      <span class="section-count">[Co · Co · N updates]</span>
     </div>
   </div>
   <div class="card-grid"><!-- 2–4 cards --></div>
@@ -400,34 +492,41 @@ Examples:
     <div class="section-header-bar"></div>
     <div class="section-header-inner">
       <span class="section-title">🔧 CMMS + EAM + Field Service</span>
-      <span class="section-count">[Co · Co]</span>
+      <span class="section-count">UpKeep · Limble · Fiix · ServiceMax · SAP · [N] updates</span>
     </div>
   </div>
-  <div class="card-grid"><!-- 2–3 cards --></div>
+  <div class="card-grid">
+    <!-- 2–3 dedicated cards -->
+    <!-- 1 "Also Shipped" card if applicable -->
+  </div>
 
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
   <p><strong>MaintainX Industry Watch</strong> · Issue #[N] · [Date Range]</p>
-  <p style="margin-top:5px;">Leading AI: [list] &nbsp;·&nbsp; CMMS/EAM: [list]</p>
+  <p style="margin-top:5px;">Leading AI: Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n &nbsp;·&nbsp; CMMS/EAM: UpKeep · Limble · Fiix · ServiceMax · SAP</p>
 </div>
 ```
 
 ---
 
-## 14. Quality Checklist
+## 16. Quality Checklist
 
 Before publishing each issue:
 
-- [ ] All cards have Problem, Solution, and MaintainX callouts
+- [ ] All dedicated cards have Problem, Solution, and MaintainX callouts
+- [ ] All dedicated cards have a source link — no exceptions
 - [ ] Every MaintainX callout names a specific workflow, persona, or feature — not a vague suggestion
-- [ ] TLDR has exactly 3 items, each with a bolded claim + em-dash implication
-- [ ] Section company list in `.section-count` matches the actual cards in that section
+- [ ] TLDR has exactly 3 items using only `tag-shift`, `tag-pattern`, or `tag-problem`
+- [ ] Section 1 `.section-count` shows all 8 watchlist companies + update count
+- [ ] "Also Shipped" card added for any watchlist companies with minor releases
 - [ ] Issue number, date range, and update count in header are accurate
 - [ ] All links verified working and open in new tab (`target="_blank"`)
 - [ ] Featured card used at most once — and it earns it
-- [ ] header-note included only if there's a genuine theme (omit if nothing stands out)
+- [ ] header-note included only if there's a genuine theme
+- [ ] No logo-mark element in the header — logo is text-only
+- [ ] Card titles are descriptive names — no em-dash separator required
 - [ ] File named correctly: `issue-[N]-[dates].html`
 - [ ] README updated with new live link (newest issue at top of table)
 
