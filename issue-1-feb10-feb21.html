@@ -12,182 +12,71 @@ body {
   color: #0D1F3C;
   line-height: 1.5;
 }
-
 /* HEADER */
-.header {
-  background: #2563EB;
-  padding: 32px 40px 28px;
-}
-.header-top {
-  display: flex; align-items: center;
-  justify-content: space-between; margin-bottom: 12px;
-}
+.header { background: #2563EB; padding: 32px 40px 28px; }
+.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-text { font-size: 14px; font-weight: 700; color: #fff; letter-spacing: 0.03em; }
 .logo-text span { color: rgba(255,255,255,0.7); }
-.issue-tag {
-  font-size: 11px; font-weight: 600;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 20px; padding: 3px 12px;
-}
+.issue-tag { font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 12px; }
 .header h1 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
 .header-meta { font-size: 13px; color: rgba(255,255,255,0.7); }
 .header-meta strong { color: #fff; }
-
 /* TLDR */
-.tldr {
-  background: #0a1628;
-  padding: 28px 40px;
-  border-bottom: 1px solid #1e2d42;
-}
-.tldr-label {
-  font-size: 10px; font-weight: 800;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: #94a3b8; margin-bottom: 20px;
-}
-.tldr-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.tldr-item {
-  display: flex; align-items: baseline; gap: 10px;
-}
-.tldr-tag {
-  font-size: 9px; font-weight: 800;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 3px 8px; border-radius: 4px;
-  width: fit-content;
-}
-.tag-problem  { background: rgba(34,197,94,0.15);  color: #4ade80; border: 1px solid rgba(34,197,94,0.25); }
-.tag-pattern  { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
-.tag-compete  { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
-.tag-shift    { background: rgba(239,68,68,0.15);  color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+.tldr { background: #0a1628; padding: 28px 40px; border-bottom: 1px solid #1e2d42; }
+.tldr-label { font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #94a3b8; margin-bottom: 20px; }
+.tldr-list { display: flex; flex-direction: column; gap: 10px; }
+.tldr-item { display: flex; align-items: baseline; gap: 10px; }
+.tldr-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; width: fit-content; }
+.tag-problem { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.25); }
+.tag-pattern { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+.tag-compete { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+.tag-shift { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
 .tldr-item p { font-size: 13px; color: #94a3b8; line-height: 1.6; }
 .tldr-item strong { color: #e2e8f0; }
-
 /* CONTENT */
 .content { padding: 28px 40px 48px; }
-
 /* SECTION HEADER */
-.section-header {
-  display: flex; align-items: stretch;
-  gap: 0; margin: 32px 0 16px;
-  border-radius: 6px; overflow: hidden;
-}
+.section-header { display: flex; align-items: stretch; gap: 0; margin: 32px 0 16px; border-radius: 6px; overflow: hidden; }
 .section-header-bar { width: 5px; background: #2563EB; flex-shrink: 0; }
-.section-header-inner {
-  background: #0D1F3C; flex: 1;
-  padding: 10px 16px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.section-title {
-  font-size: 12px; font-weight: 800;
-  letter-spacing: 0.12em; text-transform: uppercase; color: #fff;
-}
+.section-header-inner { background: #0D1F3C; flex: 1; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
+.section-title { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
 .section-count { font-size: 11px; color: #5a7499; }
-
-/* CARD GRID — full width, equal columns */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  align-items: stretch;
-}
-
+/* CARD GRID */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
 /* CARD */
-.card {
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #DDE3EC;
-  border-top: 6px solid #2563EB;
-  overflow: hidden;
-  display: flex; flex-direction: column;
-  height: 100%;
-  transition: box-shadow 0.15s, transform 0.15s;
-}
-.card:hover {
-  box-shadow: 0 6px 20px rgba(37,99,235,0.12);
-  transform: translateY(-2px);
-}
+.card { background: #fff; border-radius: 10px; border: 1px solid #DDE3EC; border-top: 6px solid #2563EB; overflow: hidden; display: flex; flex-direction: column; height: 100%; transition: box-shadow 0.15s, transform 0.15s; }
+.card:hover { box-shadow: 0 6px 20px rgba(37,99,235,0.12); transform: translateY(-2px); }
 .card.featured { border-top: 6px solid #F5A623; }
 .card.also-shipped { border-top-color: #64748b; }
-.also-shipped-banner {
-  background: #f1f5f9;
-  padding: 5px 16px;
-  font-size: 10px; font-weight: 800;
-  letter-spacing: 0.08em; text-transform: uppercase; color: #64748b;
-  border-bottom: 1px solid #e2e8f0;
-}
+.also-shipped-banner { background: #f1f5f9; padding: 5px 16px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #e2e8f0; }
 .also-list { list-style: none; display: flex; flex-direction: column; gap: 14px; padding: 0; }
 .also-item { display: flex; flex-direction: column; gap: 3px; }
 .also-co { font-size: 11px; font-weight: 800; color: #0D1F3C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1px; }
 .also-desc { font-size: 12px; color: #334155; line-height: 1.5; }
 .also-link { font-size: 11px; font-weight: 600; color: #2563EB; text-decoration: none; }
 .also-link:hover { text-decoration: underline; }
-.featured-banner {
-  background: linear-gradient(90deg, #F5A623, #F97316);
-  padding: 5px 16px;
-  font-size: 10px; font-weight: 800;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: #fff;
-}
-
+.featured-banner { background: linear-gradient(90deg, #F5A623, #F97316); padding: 5px 16px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
 /* CARD META ROW */
-.card-date-row {
-  display: flex; align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px 0;
-}
+.card-date-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 0; }
 .card-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .product-name { font-size: 12px; font-weight: 700; color: #64748b; }
-.badge {
-  font-size: 9px; font-weight: 700;
-  letter-spacing: 0.05em; text-transform: uppercase;
-  padding: 2px 7px; border-radius: 20px;
-}
-.badge-ai    { background: #DBEAFE; color: #1D4ED8; }
-.badge-cmms  { background: #FFEDD5; color: #C2410C; }
+.badge { font-size: 9px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; }
+.badge-ai { background: #DBEAFE; color: #1D4ED8; }
+.badge-cmms { background: #FFEDD5; color: #C2410C; }
 .badge-start { background: #DCFCE7; color: #15803D; }
 .card-date { font-size: 11px; color: #94A3B8; white-space: nowrap; }
-
 /* CARD BODY */
 .card-body { padding: 8px 16px 16px; display: flex; flex-direction: column; flex: 1; }
-.card-title {
-  font-size: 15px; font-weight: 700;
-  color: #0D1F3C; margin-bottom: 12px; line-height: 1.35;
-}
+.card-title { font-size: 15px; font-weight: 700; color: #0D1F3C; margin-bottom: 12px; line-height: 1.35; }
 .detail { margin-bottom: 8px; }
-.detail-label {
-  font-size: 9px; font-weight: 800;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: #94A3B8; margin-bottom: 2px;
-}
+.detail-label { font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #94A3B8; margin-bottom: 2px; }
 .detail-text { font-size: 13px; color: #334155; line-height: 1.5; }
-
-.mx-box {
-  background: #eff6ff;
-  border-left: 3px solid #2563EB;
-  border-radius: 0 5px 5px 0;
-  padding: 8px 10px; margin-top: auto; padding-top: 8px;
-  margin-top: 10px;
-}
+.mx-box { background: #eff6ff; border-left: 3px solid #2563EB; border-radius: 0 5px 5px 0; padding: 8px 10px; margin-top: 10px; }
 .mx-box .detail-label { color: #1d4ed8; }
 .mx-box .detail-text { font-size: 12px; color: #1e40af; }
-
-.card-link {
-  display: inline-flex; align-items: center; gap: 4px;
-  margin-top: 12px;
-  font-size: 12px; font-weight: 600;
-  color: #2563EB; text-decoration: none;
-  border: 1px solid #BFDBFE; border-radius: 5px;
-  padding: 5px 10px; width: fit-content;
-  transition: background 0.1s;
-}
+.card-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 12px; font-weight: 600; color: #2563EB; text-decoration: none; border: 1px solid #BFDBFE; border-radius: 5px; padding: 5px 10px; width: fit-content; transition: background 0.1s; }
 .card-link:hover { background: #EFF6FF; }
-
 /* FOOTER */
 .footer { background: #0D1F3C; padding: 20px 40px; text-align: center; }
 .footer p { font-size: 11px; color: #4A6080; }
@@ -206,7 +95,7 @@ body {
   </div>
   <h1>What Others Shipped This Week</h1>
   <div class="header-meta">
-    <strong>Feb 10 – 21, 2026</strong> &nbsp;·&nbsp; 11 updates · ~6 min read
+    <strong>Feb 10 – 21, 2026</strong> &nbsp;·&nbsp; 12 updates · ~6 min read
   </div>
 </div>
 
@@ -237,7 +126,7 @@ body {
     <div class="section-header-bar"></div>
     <div class="section-header-inner">
       <span class="section-title">✦ Leading AI Products</span>
-      <span class="section-count">Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n · 8 updates</span>
+      <span class="section-count">Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n · 9 updates</span>
     </div>
   </div>
 
@@ -403,9 +292,9 @@ body {
       <div class="also-shipped-banner">Also Shipped</div>
       <div class="card-date-row">
         <div class="card-tags">
-          <span class="product-name">Notion · Cursor</span>
+          <span class="product-name">Notion · Cursor · Intercom</span>
         </div>
-        <span class="card-date">Feb 18</span>
+        <span class="card-date">Feb 18–20</span>
       </div>
       <div class="card-body">
         <ul class="also-list">
@@ -416,6 +305,10 @@ body {
           <li class="also-item">
             <span class="also-co">Cursor</span>
             <span class="also-desc">Long-running CLI plans had no path to cloud handoff mid-task. CLI now transfers plans seamlessly to cloud agents, plus adds in-line ASCII diagram rendering. <a class="also-link" href="https://cursor.com/changelog/cli-feb-18-2026" target="_blank">Release notes ↗</a></span>
+          </li>
+          <li class="also-item">
+            <span class="also-co">Intercom</span>
+            <span class="also-desc">Support reps had no quick way to know what a conversation was about without reading every message. AI now generates a title for each conversation based on the opening message — visible in lists and Inbox attributes. <a class="also-link" href="https://www.intercom.com/changes/en" target="_blank">Release notes ↗</a></span>
           </li>
         </ul>
       </div>
