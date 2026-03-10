@@ -6,73 +6,192 @@
 <title>MaintainX Industry Watch — Issue #2</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F2F4F7; color: #0D1F3C; line-height: 1.5; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #F2F4F7;
+  color: #0D1F3C;
+  line-height: 1.5;
+}
+
 /* HEADER */
-.header { background: #2563EB; padding: 32px 40px 28px; }
-.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.header {
+  background: #2563EB;
+  padding: 32px 40px 28px;
+}
+.header-top {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 12px;
+}
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-text { font-size: 14px; font-weight: 700; color: #fff; letter-spacing: 0.03em; }
 .logo-text span { color: rgba(255,255,255,0.7); }
-.issue-tag { font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 12px; }
+.issue-tag {
+  font-size: 11px; font-weight: 600;
+  background: rgba(255,255,255,0.15); color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px; padding: 3px 12px;
+}
 .header h1 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
 .header-meta { font-size: 13px; color: rgba(255,255,255,0.7); }
 .header-meta strong { color: #fff; }
-.header-note { display: inline-block; margin-top: 10px; background: rgba(255,255,255,0.15); color: #fff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); }
+.header-note {
+  display: inline-block; margin-top: 10px;
+  background: rgba(255,255,255,0.15);
+  color: #fff; font-size: 12px; font-weight: 600;
+  padding: 4px 12px; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
 /* TLDR */
-.tldr { background: #0a1628; padding: 28px 40px; border-bottom: 1px solid #1e2d42; }
-.tldr-label { font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #94a3b8; margin-bottom: 20px; }
-.tldr-list { display: flex; flex-direction: column; gap: 10px; }
-.tldr-item { display: flex; align-items: baseline; gap: 10px; }
-.tldr-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; width: fit-content; }
-.tag-problem { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.25); }
-.tag-pattern { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
-.tag-compete { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
-.tag-shift { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+.tldr {
+  background: #0a1628;
+  padding: 28px 40px;
+  border-bottom: 1px solid #1e2d42;
+}
+.tldr-label {
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: #94a3b8; margin-bottom: 20px;
+}
+.tldr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tldr-item {
+  display: flex; align-items: baseline; gap: 10px;
+}
+.tldr-tag {
+  font-size: 9px; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+  width: fit-content;
+}
+.tag-problem  { background: rgba(34,197,94,0.15);  color: #4ade80; border: 1px solid rgba(34,197,94,0.25); }
+.tag-pattern  { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+.tag-compete  { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+.tag-shift    { background: rgba(239,68,68,0.15);  color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
 .tldr-item p { font-size: 13px; color: #94a3b8; line-height: 1.6; }
 .tldr-item strong { color: #e2e8f0; }
+
 /* CONTENT */
 .content { padding: 28px 40px 48px; }
+
 /* SECTION HEADER */
-.section-header { display: flex; align-items: stretch; gap: 0; margin: 32px 0 16px; border-radius: 6px; overflow: hidden; }
+.section-header {
+  display: flex; align-items: stretch;
+  gap: 0; margin: 32px 0 16px;
+  border-radius: 6px; overflow: hidden;
+}
 .section-header-bar { width: 5px; background: #2563EB; flex-shrink: 0; }
-.section-header-inner { background: #0D1F3C; flex: 1; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
-.section-title { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+.section-header-inner {
+  background: #0D1F3C; flex: 1;
+  padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.section-title {
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase; color: #fff;
+}
 .section-count { font-size: 11px; color: #5a7499; }
+
 /* CARD GRID */
-.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
 /* CARD */
-.card { background: #fff; border-radius: 10px; border: 1px solid #DDE3EC; border-top: 6px solid #2563EB; overflow: hidden; display: flex; flex-direction: column; height: 100%; transition: box-shadow 0.15s, transform 0.15s; }
-.card:hover { box-shadow: 0 6px 20px rgba(37,99,235,0.12); transform: translateY(-2px); }
+.card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #DDE3EC;
+  border-top: 6px solid #2563EB;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.card:hover {
+  box-shadow: 0 6px 20px rgba(37,99,235,0.12);
+  transform: translateY(-2px);
+}
 .card.featured { border-top: 6px solid #F5A623; }
 .card.also-shipped { border-top-color: #64748b; }
-.also-shipped-banner { background: #f1f5f9; padding: 5px 16px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #e2e8f0; }
+.also-shipped-banner {
+  background: #f1f5f9;
+  padding: 5px 16px;
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
 .also-list { list-style: none; display: flex; flex-direction: column; gap: 14px; padding: 0; }
 .also-item { display: flex; flex-direction: column; gap: 3px; }
 .also-co { font-size: 11px; font-weight: 800; color: #0D1F3C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1px; }
 .also-desc { font-size: 12px; color: #334155; line-height: 1.5; }
 .also-link { font-size: 11px; font-weight: 600; color: #2563EB; text-decoration: none; }
 .also-link:hover { text-decoration: underline; }
-.featured-banner { background: linear-gradient(90deg, #F5A623, #F97316); padding: 5px 16px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
+.featured-banner {
+  background: linear-gradient(90deg, #F5A623, #F97316);
+  padding: 5px 16px;
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
+}
+
 /* CARD META ROW */
-.card-date-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 0; }
+.card-date-row {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 0;
+}
 .card-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .product-name { font-size: 12px; font-weight: 700; color: #64748b; }
-.badge { font-size: 9px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; }
-.badge-ai { background: #DBEAFE; color: #1D4ED8; }
-.badge-cmms { background: #FFEDD5; color: #C2410C; }
+.badge {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 2px 7px; border-radius: 20px;
+}
+.badge-ai    { background: #DBEAFE; color: #1D4ED8; }
+.badge-cmms  { background: #FFEDD5; color: #C2410C; }
 .badge-start { background: #DCFCE7; color: #15803D; }
 .card-date { font-size: 11px; color: #94A3B8; white-space: nowrap; }
+
 /* CARD BODY */
 .card-body { padding: 8px 16px 16px; display: flex; flex-direction: column; flex: 1; }
-.card-title { font-size: 15px; font-weight: 700; color: #0D1F3C; margin-bottom: 12px; line-height: 1.35; }
+.card-title {
+  font-size: 15px; font-weight: 700;
+  color: #0D1F3C; margin-bottom: 12px; line-height: 1.35;
+}
 .detail { margin-bottom: 8px; }
-.detail-label { font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #94A3B8; margin-bottom: 2px; }
+.detail-label {
+  font-size: 9px; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #94A3B8; margin-bottom: 2px;
+}
 .detail-text { font-size: 13px; color: #334155; line-height: 1.5; }
-.mx-box { background: #eff6ff; border-left: 3px solid #2563EB; border-radius: 0 5px 5px 0; padding: 8px 10px; margin-top: 10px; }
+
+.mx-box {
+  background: #eff6ff;
+  border-left: 3px solid #2563EB;
+  border-radius: 0 5px 5px 0;
+  padding: 8px 10px; margin-top: 10px;
+}
 .mx-box .detail-label { color: #1d4ed8; }
 .mx-box .detail-text { font-size: 12px; color: #1e40af; }
-.card-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 12px; font-weight: 600; color: #2563EB; text-decoration: none; border: 1px solid #BFDBFE; border-radius: 5px; padding: 5px 10px; width: fit-content; transition: background 0.1s; }
+
+.card-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 12px;
+  font-size: 12px; font-weight: 600;
+  color: #2563EB; text-decoration: none;
+  border: 1px solid #BFDBFE; border-radius: 5px;
+  padding: 5px 10px; width: fit-content;
+  transition: background 0.1s;
+}
 .card-link:hover { background: #EFF6FF; }
+
 /* FOOTER */
 .footer { background: #0D1F3C; padding: 20px 40px; text-align: center; }
 .footer p { font-size: 11px; color: #4A6080; }
@@ -85,32 +204,32 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <div class="header">
   <div class="header-top">
     <div class="logo">
-      <div class="logo-text">Maintain<span>X</span> · Industry Watch</div>
+      <div class="logo-text">Maintain<span>X</span> &middot; Industry Watch</div>
     </div>
     <div class="issue-tag">Issue #2</div>
   </div>
   <h1>What Others Shipped This Week</h1>
   <div class="header-meta">
-    <strong>Feb 22 – Mar 7, 2026</strong> &nbsp;·&nbsp; 13 updates · ~6 min read
+    <strong>Feb 22 &ndash; Mar 7, 2026</strong> &nbsp;&middot;&nbsp; 13 updates &middot; ~5 min read
   </div>
-  <div class="header-note">⭐ Big week — autonomous agents went from demo to product</div>
+  <div class="header-note">&#11088; Big week &mdash; autonomous agents went from demo to product</div>
 </div>
 
 <!-- TLDR -->
 <div class="tldr">
-  <div class="tldr-label">TLDR — Trends &amp; Patterns</div>
+  <div class="tldr-label">TLDR &mdash; Trends &amp; Patterns</div>
   <div class="tldr-list">
     <div class="tldr-item">
       <span class="tldr-tag tag-shift">Category Shift</span>
-      <p><strong>Notion and Cursor both shipped always-on, event-triggered agents</strong> — the question is no longer whether to build them, but which maintenance workflows run autonomously first.</p>
+      <p><strong>Notion and Cursor both shipped always-on, event-triggered agents</strong> &mdash; the question is no longer whether to build them, but which maintenance workflows run autonomously first.</p>
     </div>
     <div class="tldr-item">
       <span class="tldr-tag tag-pattern">UX Pattern</span>
-      <p><strong>Linear's deeplink opens AI pre-filled with full context in one click</strong> — tapping a MaintainX WO should load asset history + SOP the same way.</p>
+      <p><strong>Linear&rsquo;s deeplink opens AI pre-filled with full context in one click</strong> &mdash; tapping a MaintainX WO should load asset history + SOP the same way.</p>
     </div>
     <div class="tldr-item">
       <span class="tldr-tag tag-problem">User Problem</span>
-      <p><strong>Technicians close WOs without filling critical fields</strong> — UpKeep's Required Fields blocks closure until they do.</p>
+      <p><strong>Technicians close WOs without filling critical fields</strong> &mdash; UpKeep&rsquo;s Required Fields blocks closure until they do.</p>
     </div>
   </div>
 </div>
@@ -122,15 +241,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   <div class="section-header">
     <div class="section-header-bar"></div>
     <div class="section-header-inner">
-      <span class="section-title">✦ Leading AI Products</span>
-      <span class="section-count">Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n · 8 updates</span>
+      <span class="section-title">&#10022; Leading AI Products</span>
+      <span class="section-count">Notion &middot; Cursor &middot; ChatGPT &middot; Claude &middot; Linear &middot; Glean &middot; Intercom &middot; n8n &middot; 8 updates</span>
     </div>
   </div>
 
   <div class="card-grid">
 
     <div class="card featured">
-      <div class="featured-banner">⭐ Feature of the Week</div>
+      <div class="featured-banner">&#11088; Feature of the Week</div>
       <div class="card-date-row">
         <div class="card-tags">
           <span class="product-name">Notion</span>
@@ -139,20 +258,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <span class="card-date">Feb 24</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Custom Agents — Set a job, set a trigger, let it run 24/7</div>
+        <div class="card-title">Custom Agents &mdash; Set a job, set a trigger, let it run 24/7</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Repetitive knowledge tasks are too nuanced for rule-based automation but too tedious to handle manually every day.</div>
+          <div class="detail-text">Repetitive knowledge tasks are too nuanced for rules, too tedious for daily manual work.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Assign a job + trigger and the agent runs 24/7 — across Notion, Slack, Mail, Calendar, Figma, Linear, and custom MCP servers.</div>
+          <div class="detail-text">Set a job + trigger &mdash; agent runs 24/7 across Notion, Slack, Mail, Figma, Linear, and MCP servers.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">The proof point for autonomous maintenance: agents that auto-create PMs from sensor alerts or escalate overdue WOs — no human trigger needed.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">The template for autonomous maintenance: agents auto-creating PMs from sensor alerts or escalating overdue WOs.</div>
         </div>
-        <a class="card-link" href="https://www.notion.com/releases/2026-02-24" target="_blank">Release notes ↗</a>
+        <a class="card-link" href="https://www.notion.com/releases/2026-02-24" target="_blank">Release notes &#8599;</a>
       </div>
     </div>
 
@@ -165,20 +284,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <span class="card-date">Mar 5</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Automations — Always-on agents triggered by Slack, GitHub, PagerDuty</div>
+        <div class="card-title">Automations &mdash; Always-on agents triggered by Slack, GitHub, PagerDuty</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Every AI task still needs a human to start it — no way to wire agents to live events.</div>
+          <div class="detail-text">Every AI task still needs a human to kick it off.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Agents that fire on Slack messages, Linear issues, GitHub pushes, or PagerDuty alerts — each producing merge-ready PRs with full codebase context.</div>
+          <div class="detail-text">Agents fire on Slack, GitHub pushes, or PagerDuty alerts &mdash; producing merge-ready PRs with full context.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">The event → agent → artifact model maps directly to sensor alert → work order → PM scheduling. Best reference for this pattern.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">Event &#8594; agent &#8594; artifact maps directly to sensor alert &#8594; WO &#8594; PM scheduling.</div>
         </div>
-        <a class="card-link" href="https://cursor.com/changelog" target="_blank">Changelog ↗</a>
+        <a class="card-link" href="https://cursor.com/changelog" target="_blank">Changelog &#8599;</a>
       </div>
     </div>
 
@@ -191,20 +310,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <span class="card-date">Feb 26</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Deeplink to AI Tools — Full issue context, one click</div>
+        <div class="card-title">Deeplink to AI Tools &mdash; Full issue context, one click</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Every AI task starts with manual copy-paste — context degrades in the transfer every time.</div>
+          <div class="detail-text">Every AI task starts with copy-paste &mdash; context degrades in the transfer.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">One click opens Cursor or Claude pre-filled with full issue context — description, comments, attachments, all of it.</div>
+          <div class="detail-text">One click opens Cursor or Claude pre-filled with full issue context &mdash; description, comments, attachments.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Tapping a work order should open MaintainX AI pre-loaded with asset history, last failure, and the SOP — zero copy-paste.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">Tapping a WO should open MaintainX AI pre-loaded with asset history and the SOP &mdash; zero copy-paste.</div>
         </div>
-        <a class="card-link" href="https://linear.app/changelog/2026-02-26-deeplink-to-ai-coding-tools" target="_blank">Release notes ↗</a>
+        <a class="card-link" href="https://linear.app/changelog/2026-02-26-deeplink-to-ai-coding-tools" target="_blank">Release notes &#8599;</a>
       </div>
     </div>
 
@@ -220,17 +339,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <div class="card-title">Voice Collaboration + Brand-Aligned Slide Generation</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Workers with full hands — or in loud environments — have no good way to query enterprise AI.</div>
+          <div class="detail-text">Workers with full hands or in loud environments can&rsquo;t type enterprise queries.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Real-time voice for hands-free knowledge queries — plus slide decks generated from internal data, auto-formatted to brand standards.</div>
+          <div class="detail-text">Real-time voice queries + brand-formatted slide decks generated from internal data.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Shop floor technicians can't type mid-task — voice-first WO lookup, completion logging, and parts reporting is an untapped field moment.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">Shop floor techs can&rsquo;t type mid-task &mdash; voice-first WO lookup is an untapped field moment.</div>
         </div>
-        <a class="card-link" href="https://www.glean.com/product-updates" target="_blank">Product updates ↗</a>
+        <a class="card-link" href="https://www.glean.com/product-updates" target="_blank">Product updates &#8599;</a>
       </div>
     </div>
 
@@ -243,20 +362,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <span class="card-date">Feb 26</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Data Connector Health — See if integrations are working at a glance</div>
+        <div class="card-title">Data Connector Health &mdash; Live status for every integration</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Integration failures are silent — a connector breaks, data stops flowing, and no one notices until the damage is done.</div>
+          <div class="detail-text">Integration failures are silent until the damage is done.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Live Health status (Healthy / Degraded / Unhealthy) per connector, plus a "Used by" column showing which workflows depend on it before you touch anything.</div>
+          <div class="detail-text">Live Health status per connector (Healthy / Degraded / Unhealthy) + which workflows depend on it.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">As integrations grow (ERP, IoT, EAM), connector health belongs in the admin UI — not discovered via a support ticket.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">As integrations grow, connector health belongs in the admin UI &mdash; not a support ticket.</div>
         </div>
-        <a class="card-link" href="https://www.intercom.com/changes/en" target="_blank">Release notes ↗</a>
+        <a class="card-link" href="https://www.intercom.com/changes/en" target="_blank">Release notes &#8599;</a>
       </div>
     </div>
 
@@ -264,23 +383,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
       <div class="also-shipped-banner">Also Shipped</div>
       <div class="card-date-row">
         <div class="card-tags">
-          <span class="product-name">ChatGPT · n8n · Claude</span>
+          <span class="product-name">ChatGPT &middot; n8n &middot; Claude</span>
         </div>
-        <span class="card-date">Feb 23 – Mar 3</span>
+        <span class="card-date">Feb 23 &ndash; Mar 3</span>
       </div>
       <div class="card-body">
         <ul class="also-list">
           <li class="also-item">
             <span class="also-co">ChatGPT</span>
-            <span class="also-desc">GPT-5.2 Instant was reaching its limits as the default everyday model. GPT-5.3 Instant launched Mar 3 as the new default for all ChatGPT users — improved everyday performance across info-seeking, how-tos, and technical writing. <a class="also-link" href="https://openai.com/index/gpt-5-3-instant/" target="_blank">Release notes ↗</a></span>
+            <span class="also-desc">GPT-5.2 Instant hit its ceiling as the everyday default. GPT-5.3 Instant is now the default for all ChatGPT users &mdash; better info-seeking, how-tos, and technical writing. <a class="also-link" href="https://openai.com/index/gpt-5-3-instant/" target="_blank">Release notes &#8599;</a></span>
           </li>
           <li class="also-item">
             <span class="also-co">n8n</span>
-            <span class="also-desc">External secrets providers only supported one authentication token per connector. Feb 23 update adds multiple tokens per provider with a simplified management UI — better for enterprise multi-tenant setups. <a class="also-link" href="https://docs.n8n.io/release-notes/" target="_blank">Release notes ↗</a></span>
+            <span class="also-desc">External secrets providers only supported one token per connector. Feb 23 update adds multiple tokens per provider with a simplified management UI. <a class="also-link" href="https://docs.n8n.io/release-notes/" target="_blank">Release notes &#8599;</a></span>
           </li>
           <li class="also-item">
             <span class="also-co">Claude</span>
-            <span class="also-desc">Claude had no way to remember preferences or context across separate conversations. Memory from chat history launched Mar 2 for all users — Claude now surfaces relevant context from past sessions automatically. <a class="also-link" href="https://www.anthropic.com/news" target="_blank">Release notes ↗</a></span>
+            <span class="also-desc">Claude had no memory across separate conversations. Memory from chat history launched Mar 2 &mdash; now surfaces relevant context from past sessions automatically. <a class="also-link" href="https://www.anthropic.com/news" target="_blank">Release notes &#8599;</a></span>
           </li>
         </ul>
       </div>
@@ -292,8 +411,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   <div class="section-header">
     <div class="section-header-bar"></div>
     <div class="section-header-inner">
-      <span class="section-title">🚀 Interesting AI Startups</span>
-      <span class="section-count">Runway · Simplora · Claude Sonnet 4.6</span>
+      <span class="section-title">&#128640; Interesting AI Startups</span>
+      <span class="section-count">Runway &middot; Simplora &middot; Claude Sonnet 4.6</span>
     </div>
   </div>
 
@@ -305,23 +424,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
           <span class="product-name">Runway</span>
           <span class="badge badge-start">Startup</span>
         </div>
-        <span class="card-date">Feb 10 · $315M</span>
+        <span class="card-date">Feb 10 &middot; $315M</span>
       </div>
       <div class="card-body">
-        <div class="card-title">World Models — AI that understands physical environments</div>
+        <div class="card-title">World Models &mdash; AI that understands physical environments</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Industrial inspection still needs human eyes — AI can't yet reason about physical space, object state, or causality from video.</div>
+          <div class="detail-text">Industrial AI can&rsquo;t yet reason about physical space or object state from video.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">World models: AI that simulates and reasons about physical environments — not just generates video. $315M at $5.3B valuation.</div>
+          <div class="detail-text">World models simulate and reason about physical environments &mdash; not just generate video. $315M at $5.3B.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Long-term: video-based equipment inspection without human eyes — directionally important for field maintenance AI.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">Directionally important for video-based equipment inspection without human eyes.</div>
         </div>
-        <a class="card-link" href="https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/" target="_blank">TechCrunch ↗</a>
+        <a class="card-link" href="https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/" target="_blank">TechCrunch &#8599;</a>
       </div>
     </div>
 
@@ -334,18 +453,18 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <span class="card-date">Mar 2026</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Meeting → Work Items — Action items routed into the tools where work happens</div>
+        <div class="card-title">Meeting &#8594; Work Items &mdash; Action items routed into the tools where work happens</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Decisions from planning meetings rarely make it into the work order system — the handoff is manual and lossy.</div>
+          <div class="detail-text">Meeting action items rarely make it into the work order system &mdash; the handoff is manual and lossy.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Meeting action items extracted and routed directly into Jira, Slack, or Linear — no copy-paste, no follow-up needed.</div>
+          <div class="detail-text">Action items extracted from meetings and routed directly into Jira, Slack, or Linear &mdash; no copy-paste.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Auto-capturing "replace HVAC filter on Line 3" from a planning call into a MaintainX WO closes a loop customers currently do manually — high-value, low-visibility gap.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">&ldquo;Replace HVAC filter on Line 3&rdquo; auto-creating a MaintainX WO from a planning call closes a loop customers do manually today.</div>
         </div>
       </div>
     </div>
@@ -359,18 +478,18 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <span class="card-date">Feb 17</span>
       </div>
       <div class="card-body">
-        <div class="card-title">#1 Writing Model — Best-in-class for structured documentation</div>
+        <div class="card-title">#1 Writing Model &mdash; Best-in-class for structured documentation</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Most AI is optimized for code — enterprises need one that nails structured docs: SOPs, incident reports, compliance records.</div>
+          <div class="detail-text">Most AI models are optimized for code, not structured enterprise docs like SOPs or incident reports.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">#1 in blind writing tests within 48 hours of launch — beats its predecessor in 70% of structured doc comparisons.</div>
+          <div class="detail-text">#1 in blind writing tests &mdash; beats its predecessor in 70% of structured doc comparisons.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Best model today for turning technician voice notes or photos into maintenance SOPs, WO descriptions, and incident reports.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">Best model today for turning technician voice notes or photos into SOPs, WO descriptions, and incident reports.</div>
         </div>
       </div>
     </div>
@@ -381,8 +500,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   <div class="section-header">
     <div class="section-header-bar"></div>
     <div class="section-header-inner">
-      <span class="section-title">🔧 CMMS + EAM + Field Service</span>
-      <span class="section-count">UpKeep · Fiix · 2 updates</span>
+      <span class="section-title">&#128295; CMMS + EAM + Field Service</span>
+      <span class="section-count">UpKeep &middot; Fiix &middot; 2 updates</span>
     </div>
   </div>
 
@@ -394,23 +513,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
           <span class="product-name">UpKeep</span>
           <span class="badge badge-cmms">CMMS</span>
         </div>
-        <span class="card-date">Feb 23 · v5.17</span>
+        <span class="card-date">Feb 23 &middot; v5.17</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Required Fields + Locked Tasks — Work orders can't close until the job is done right</div>
+        <div class="card-title">Required Fields + Locked Tasks &mdash; WOs can&rsquo;t close until the job is done right</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Technicians close WOs without filling critical fields — leaving records managers can't trust for compliance or reporting.</div>
+          <div class="detail-text">Techs close WOs without filling critical fields &mdash; records can&rsquo;t be trusted for compliance or reporting.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Required Fields blocks WO closure until filled. Locked Tasks restricts sign-off to the assigned user. SOPs linkable via URL.</div>
+          <div class="detail-text">Required Fields blocks WO closure until filled; Locked Tasks restricts sign-off to the assigned user.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">A persistent pain in regulated industries — compare MaintainX's enforcement features on configurability and how easy they are to surface.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">A persistent pain in regulated industries &mdash; compare MaintainX&rsquo;s enforcement features on configurability and ease of surfacing.</div>
         </div>
-        <a class="card-link" href="https://upkeep.com/" target="_blank">Product page ↗</a>
+        <a class="card-link" href="https://upkeep.com/" target="_blank">Product page &#8599;</a>
       </div>
     </div>
 
@@ -423,20 +542,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
         <span class="card-date">Feb 2026</span>
       </div>
       <div class="card-body">
-        <div class="card-title">AI Copilot — Natural language queries over assets, sensors &amp; work history</div>
+        <div class="card-title">AI Copilot &mdash; Natural language queries over assets, sensors &amp; work history</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Maintenance insights are locked behind complex filters — "what's the uptime for Line 3 this month?" requires a data analyst.</div>
+          <div class="detail-text">&ldquo;What&rsquo;s the uptime for Line 3 this month?&rdquo; still requires a data analyst.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Plain-English queries over assets and sensors in real time — now with hourly sensor queries by name and structured multi-record output.</div>
+          <div class="detail-text">Plain-English queries over assets and sensors in real time &mdash; now with hourly sensor queries by name.</div>
         </div>
         <div class="mx-box">
-          <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">The most accessible AI feature for non-technical managers — Fiix's rapid expansion signals where demand is pulling the whole category.</div>
+          <div class="detail-label">&#128161; MaintainX</div>
+          <div class="detail-text">Fiix&rsquo;s rapid expansion here signals where demand is pulling the whole category.</div>
         </div>
-        <a class="card-link" href="https://fiixsoftware.com/" target="_blank">Product page ↗</a>
+        <a class="card-link" href="https://fiixsoftware.com/" target="_blank">Product page &#8599;</a>
       </div>
     </div>
 
@@ -445,8 +564,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </div>
 
 <div class="footer">
-  <p><strong>MaintainX Industry Watch</strong> · Issue #2 · Feb 22 – Mar 7, 2026</p>
-  <p style="margin-top:5px;">Leading AI: Notion · Cursor · ChatGPT · Claude · Linear · Glean · Intercom · n8n &nbsp;·&nbsp; CMMS/EAM: UpKeep · Limble · Fiix · ServiceMax · SAP</p>
+  <p><strong>MaintainX Industry Watch</strong> &middot; Issue #2 &middot; Feb 22 &ndash; Mar 7, 2026</p>
+  <p style="margin-top:5px;">Leading AI: Notion &middot; Cursor &middot; ChatGPT &middot; Claude &middot; Linear &middot; Glean &middot; Intercom &middot; n8n &nbsp;&middot;&nbsp; CMMS/EAM: UpKeep &middot; Limble &middot; Fiix &middot; ServiceMax &middot; SAP</p>
 </div>
 
 </body>
