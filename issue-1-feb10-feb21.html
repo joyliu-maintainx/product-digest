@@ -12,6 +12,7 @@ body {
   color: #0D1F3C;
   line-height: 1.5;
 }
+
 /* HEADER */
 .header { background: #2563EB; padding: 32px 40px 28px; }
 .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
@@ -22,6 +23,7 @@ body {
 .header h1 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
 .header-meta { font-size: 13px; color: rgba(255,255,255,0.7); }
 .header-meta strong { color: #fff; }
+
 /* TLDR */
 .tldr { background: #0a1628; padding: 28px 40px; border-bottom: 1px solid #1e2d42; }
 .tldr-label { font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #94a3b8; margin-bottom: 20px; }
@@ -34,16 +36,20 @@ body {
 .tag-shift { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
 .tldr-item p { font-size: 13px; color: #94a3b8; line-height: 1.6; }
 .tldr-item strong { color: #e2e8f0; }
+
 /* CONTENT */
 .content { padding: 28px 40px 48px; }
+
 /* SECTION HEADER */
 .section-header { display: flex; align-items: stretch; gap: 0; margin: 32px 0 16px; border-radius: 6px; overflow: hidden; }
 .section-header-bar { width: 5px; background: #2563EB; flex-shrink: 0; }
 .section-header-inner { background: #0D1F3C; flex: 1; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
 .section-title { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
 .section-count { font-size: 11px; color: #5a7499; }
+
 /* CARD GRID */
 .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+
 /* CARD */
 .card { background: #fff; border-radius: 10px; border: 1px solid #DDE3EC; border-top: 6px solid #2563EB; overflow: hidden; display: flex; flex-direction: column; height: 100%; transition: box-shadow 0.15s, transform 0.15s; }
 .card:hover { box-shadow: 0 6px 20px rgba(37,99,235,0.12); transform: translateY(-2px); }
@@ -57,6 +63,7 @@ body {
 .also-link { font-size: 11px; font-weight: 600; color: #2563EB; text-decoration: none; }
 .also-link:hover { text-decoration: underline; }
 .featured-banner { background: linear-gradient(90deg, #F5A623, #F97316); padding: 5px 16px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
+
 /* CARD META ROW */
 .card-date-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 0; }
 .card-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
@@ -66,6 +73,7 @@ body {
 .badge-cmms { background: #FFEDD5; color: #C2410C; }
 .badge-start { background: #DCFCE7; color: #15803D; }
 .card-date { font-size: 11px; color: #94A3B8; white-space: nowrap; }
+
 /* CARD BODY */
 .card-body { padding: 8px 16px 16px; display: flex; flex-direction: column; flex: 1; }
 .card-title { font-size: 15px; font-weight: 700; color: #0D1F3C; margin-bottom: 12px; line-height: 1.35; }
@@ -77,6 +85,7 @@ body {
 .mx-box .detail-text { font-size: 12px; color: #1e40af; }
 .card-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 12px; font-weight: 600; color: #2563EB; text-decoration: none; border: 1px solid #BFDBFE; border-radius: 5px; padding: 5px 10px; width: fit-content; transition: background 0.1s; }
 .card-link:hover { background: #EFF6FF; }
+
 /* FOOTER */
 .footer { background: #0D1F3C; padding: 20px 40px; text-align: center; }
 .footer p { font-size: 11px; color: #4A6080; }
@@ -95,7 +104,7 @@ body {
   </div>
   <h1>What Others Shipped This Week</h1>
   <div class="header-meta">
-    <strong>Feb 10 – 21, 2026</strong> &nbsp;·&nbsp; 12 updates · ~6 min read
+    <strong>Feb 10 – 21, 2026</strong> &nbsp;·&nbsp; 12 updates · ~5 min read
   </div>
 </div>
 
@@ -144,15 +153,15 @@ body {
         <div class="card-title">MCP Server for Product Management</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Every AI-assisted task hits a dead end when project context lives in a separate app.</div>
+          <div class="detail-text">AI tools have no access to what's actually on your roadmap.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">MCP server now exposes initiatives and milestones — live project context for any AI client, zero tab-switching.</div>
+          <div class="detail-text">MCP server exposes initiatives and milestones as live context for any AI client.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">The template for an AI-readable MaintainX API — work orders, assets, and PMs as live context for any agent.</div>
+          <div class="detail-text">The template for a MaintainX API — work orders and PMs as live agent context.</div>
         </div>
         <a class="card-link" href="https://linear.app/changelog/2026-02-05-linear-mcp-for-product-management" target="_blank">Release notes ↗</a>
       </div>
@@ -170,15 +179,15 @@ body {
         <div class="card-title">Advanced Filters — Describe it, get the view</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Complex queries needed manual workarounds — no nested logic, no OR conditions.</div>
+          <div class="detail-text">Complex list views required manual filter workarounds.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Full AND/OR condition trees, plus AI mode: describe the view you want and it builds the filter.</div>
+          <div class="detail-text">Full AND/OR condition trees, plus AI mode: describe the view and it builds the filter.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">AI-to-filter belongs in MaintainX list views — "show me overdue PMs at Site A assigned to contractors" should just work.</div>
+          <div class="detail-text">"Show me overdue PMs at Site A assigned to contractors" should just work.</div>
         </div>
         <a class="card-link" href="https://linear.app/changelog" target="_blank">Release notes ↗</a>
       </div>
@@ -193,18 +202,18 @@ body {
         <span class="card-date">Jan 2026 Drop</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Search in Chat + Autocomplete + Image Gen — One grounded enterprise workspace</div>
+        <div class="card-title">Search + Chat + Autocomplete + Image Gen — One grounded workspace</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Enterprise workers bounce between search, chat, and creation tools — context resets at every switch.</div>
+          <div class="detail-text">Enterprise workers context-switch constantly between search, chat, and creation tools.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Search, chat, autocomplete, and image gen in one workspace — all grounded in company knowledge, no context loss.</div>
+          <div class="detail-text">All four in one workspace — grounded in company data, no context loss.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">The reference architecture: one AI grounded in work orders, asset history, and SOPs — not generic LLM knowledge.</div>
+          <div class="detail-text">The reference architecture: one AI grounded in work orders, asset history, and SOPs.</div>
         </div>
         <a class="card-link" href="https://www.glean.com/product-drop/january-2026" target="_blank">Release notes ↗</a>
       </div>
@@ -222,15 +231,15 @@ body {
         <div class="card-title">Claude Sonnet 4.6 — #1 writing model within 48 hours of launch</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Teams need AI that writes structured docs — SOPs, incident reports, compliance records — not just chat responses.</div>
+          <div class="detail-text">Most AI is optimized for chat, not structured documents.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Beat its predecessor in 70% of writing comparisons within 48 hours — best-in-class for structured, technical docs.</div>
+          <div class="detail-text">Beat its predecessor in 70% of writing tests — best-in-class for SOPs, reports, and compliance docs.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Best model today for turning technician voice notes or photos into maintenance SOPs, WO descriptions, and incident reports.</div>
+          <div class="detail-text">Best model today for turning voice notes or photos into maintenance docs.</div>
         </div>
         <a class="card-link" href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank">Release notes ↗</a>
       </div>
@@ -245,18 +254,18 @@ body {
         <span class="card-date">Feb 2026</span>
       </div>
       <div class="card-body">
-        <div class="card-title">ChatGPT Agent — AI that executes tasks, not just answers questions</div>
+        <div class="card-title">ChatGPT Agent — AI that executes, not just answers</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">AI tells you what to do — a human still has to execute every step.</div>
+          <div class="detail-text">AI tells you what to do. A human still does every step.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Operator evolved into ChatGPT Agent — autonomous web browsing, form-filling, and multi-step execution with no hand-holding.</div>
+          <div class="detail-text">Autonomous web browsing, form-filling, and multi-step execution — no hand-holding.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Maintenance managers using ChatGPT Agent daily will expect the same from MaintainX — autonomous execution, not AI suggestions.</div>
+          <div class="detail-text">Managers using ChatGPT Agent daily will expect the same autonomous execution from MaintainX.</div>
         </div>
         <a class="card-link" href="https://www.adsx.com/blog/chatgpt-updates-february-2026" target="_blank">Release notes ↗</a>
       </div>
@@ -268,21 +277,21 @@ body {
           <span class="product-name">n8n</span>
           <span class="badge badge-ai">AI Product</span>
         </div>
-        <span class="card-date">Feb 16 + 23</span>
+        <span class="card-date">Feb 16</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Enterprise Controls + Multi-Secret Connections — Scaling self-hosted AI workflows</div>
+        <div class="card-title">Enterprise Controls — Scaling self-hosted AI workflows</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">No admin control over what users publish — a compliance gap the moment n8n scales past a small team.</div>
+          <div class="detail-text">No admin control over what users publish — a compliance gap at scale.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Granular admin controls over personal spaces (sharing, publishing), plus 30–80% faster load times for large workflow instances.</div>
+          <div class="detail-text">Granular controls over personal spaces plus 30–80% faster load for large instances.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Advanced MaintainX customers build automation workarounds here — every n8n upgrade is a signal MaintainX's native workflows need to catch up.</div>
+          <div class="detail-text">Every n8n upgrade signals MaintainX's native automation needs to close the gap.</div>
         </div>
         <a class="card-link" href="https://docs.n8n.io/release-notes/" target="_blank">Release notes ↗</a>
       </div>
@@ -300,15 +309,15 @@ body {
         <ul class="also-list">
           <li class="also-item">
             <span class="also-co">Notion</span>
-            <span class="also-desc">Finding the right page in a large workspace requires too much sidebar scrolling. Library adds a full-page hub with dedicated tabs for Teamspaces, Recents, Favorites, and Shared pages. <a class="also-link" href="https://www.notion.com/releases/2026-02-18" target="_blank">Release notes ↗</a></span>
+            <span class="also-desc">Large workspaces have no single hub — sidebar scrolling is the norm. Library adds a full-page view with tabs for Recents, Favorites, and Teamspaces. <a class="also-link" href="https://www.notion.com/releases/2026-02-18" target="_blank">Release notes ↗</a></span>
           </li>
           <li class="also-item">
             <span class="also-co">Cursor</span>
-            <span class="also-desc">Long-running CLI plans had no path to cloud handoff mid-task. CLI now transfers plans seamlessly to cloud agents, plus adds in-line ASCII diagram rendering. <a class="also-link" href="https://cursor.com/changelog/cli-feb-18-2026" target="_blank">Release notes ↗</a></span>
+            <span class="also-desc">CLI couldn't hand off a running task to the cloud. Plans now transfer seamlessly to cloud agents, plus inline ASCII diagram rendering. <a class="also-link" href="https://cursor.com/changelog/cli-feb-18-2026" target="_blank">Release notes ↗</a></span>
           </li>
           <li class="also-item">
             <span class="also-co">Intercom</span>
-            <span class="also-desc">Support reps had no quick way to know what a conversation was about without reading every message. AI now generates a title for each conversation based on the opening message — visible in lists and Inbox attributes. <a class="also-link" href="https://www.intercom.com/changes/en" target="_blank">Release notes ↗</a></span>
+            <span class="also-desc">No quick way to see what a conversation was about. AI now generates a title from the opening message, visible in lists and Inbox. <a class="also-link" href="https://www.intercom.com/changes/en" target="_blank">Release notes ↗</a></span>
           </li>
         </ul>
       </div>
@@ -339,15 +348,15 @@ body {
         <div class="card-title">AI-Native CRM — Zero data entry for sales teams</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Sales reps spend ~40% of their time logging CRM data — time that should be in front of customers.</div>
+          <div class="detail-text">Sales reps spend ~40% of their time on CRM data entry.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">CRM auto-populated from emails, calls, and browser activity — zero manual logging. Backed by Collison brothers + Garry Tan.</div>
+          <div class="detail-text">CRM auto-populated from emails, calls, and browsing — zero manual logging. Backed by Collison brothers + Garry Tan.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Same bet for CMMS — AI inferring work order updates from technician photos, voice notes, or sensor data.</div>
+          <div class="detail-text">The same bet for CMMS — AI inferring WO updates from photos, voice notes, or sensor data.</div>
         </div>
         <a class="card-link" href="https://techcrunch.com/2026/02/11/former-founders-fund-vc-sam-blond-launches-ai-sales-startup-to-upend-salesforce/" target="_blank">TechCrunch ↗</a>
       </div>
@@ -365,15 +374,15 @@ body {
         <div class="card-title">Decision Mimicry — Scale expert judgment with AI</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Expert judgment walks out the door when senior people retire — tacit knowledge doesn't transfer at scale.</div>
+          <div class="detail-text">Expert judgment doesn't transfer at scale — it retires with the expert.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Trains AI on how domain experts decide, then deploys that judgment for non-experts. $100M Series A from Index Ventures.</div>
+          <div class="detail-text">Trains AI on how domain experts decide, then deploys that judgment to non-experts. $100M Series A.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Train on master technician diagnostics to give every tech expert-level troubleshooting — a real differentiator for industrial customers.</div>
+          <div class="detail-text">Train on master technician diagnostics to give every tech expert-level troubleshooting.</div>
         </div>
       </div>
     </div>
@@ -390,15 +399,15 @@ body {
         <div class="card-title">Enterprise Agent Platform — Multi-agent workflows without custom engineering</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Building AI agents means custom orchestration per workflow — expensive, slow, and rebuilt from scratch every time.</div>
+          <div class="detail-text">Building AI agents requires custom orchestration for every workflow.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Managed platform for multi-agent workflows across any AI provider — no custom orchestration layer needed.</div>
+          <div class="detail-text">Managed platform for multi-agent workflows across any AI provider — no custom infra needed.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Enterprise buyers will use Frontier as their benchmark — MaintainX's AI story needs to match this orchestration standard upmarket.</div>
+          <div class="detail-text">Enterprise buyers will benchmark against this. MaintainX's AI story needs to match upmarket.</div>
         </div>
         <a class="card-link" href="https://techcrunch.com/2026/02/05/openai-launches-a-way-for-enterprises-to-build-and-manage-ai-agents/" target="_blank">TechCrunch ↗</a>
       </div>
@@ -429,15 +438,15 @@ body {
         <div class="card-title">Asset Snap — Photo a nameplate, skip data entry</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Manually typing model and serial numbers from worn nameplates is slow, error-prone, and kills CMMS adoption.</div>
+          <div class="detail-text">Typing model and serial numbers from worn nameplates is slow and error-prone.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Point at any nameplate — AI extracts manufacturer, model, and serial into a complete asset record instantly. Limble claims 80% faster onboarding.</div>
+          <div class="detail-text">Point at any nameplate — AI extracts manufacturer, model, and serial instantly. Limble claims 80% faster onboarding.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">A direct shot at onboarding friction — camera-based asset intake on MaintainX mobile would cut time-to-value for asset-heavy customers.</div>
+          <div class="detail-text">Camera-based asset intake on mobile would cut time-to-value for asset-heavy customers.</div>
         </div>
         <a class="card-link" href="https://limble.com/blog/winter-release-2026/" target="_blank">Release notes ↗</a>
       </div>
@@ -455,15 +464,15 @@ body {
         <div class="card-title">Resource Planning — AI-suggested schedule rebalancing in real time</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Managers juggle capacity and backlogs across spreadsheets — no single view shows what's at risk until it's already late.</div>
+          <div class="detail-text">No single view shows capacity vs. workload across techs and shifts.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">Real-time capacity vs. workload view with AI suggesting which tasks to move — claims 10–15 hrs/week saved.</div>
+          <div class="detail-text">Real-time capacity view with AI suggesting which tasks to move. Claims 10–15 hrs/week saved.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">Top ask from multi-site customers — AI-assisted rebalancing is the feature to beat for teams running 10+ techs across shifts.</div>
+          <div class="detail-text">AI-assisted rebalancing is the feature to beat for teams running 10+ techs across shifts.</div>
         </div>
         <a class="card-link" href="https://limble.com/blog/winter-release-2026/" target="_blank">Release notes ↗</a>
       </div>
@@ -481,15 +490,15 @@ body {
         <div class="card-title">Intelligent Asset Management — AI-driven PM scheduling + IoT anomaly detection at scale</div>
         <div class="detail">
           <div class="detail-label">Problem</div>
-          <div class="detail-text">Thousands of assets can't be manually monitored — failures slip through before anyone notices.</div>
+          <div class="detail-text">Thousands of assets can't be manually monitored — failures slip through undetected.</div>
         </div>
         <div class="detail">
           <div class="detail-label">Solution</div>
-          <div class="detail-text">ML-driven PM scheduling, IoT anomaly detection, and mobile field execution — all wired into S/4HANA's ERP layer.</div>
+          <div class="detail-text">ML-driven PM scheduling, IoT anomaly detection, and mobile execution wired into S/4HANA.</div>
         </div>
         <div class="mx-box">
           <div class="detail-label">💡 MaintainX</div>
-          <div class="detail-text">SAP sets the enterprise ceiling — knowing this stack clarifies the upmarket wall and the integration play for ERP-heavy prospects.</div>
+          <div class="detail-text">SAP sets the enterprise ceiling — knowing this stack clarifies the upmarket wall.</div>
         </div>
         <a class="card-link" href="https://sapinsider.org/topic/sap-supply-chain-management/sap-plant-maintenance/" target="_blank">SAP Insider ↗</a>
       </div>
